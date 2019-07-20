@@ -1,0 +1,236 @@
+{
+    "type": "CorrectIncorrect",
+    "header": {
+        "id": "famousPaintings1",
+        "title": "What's The Title Of These World-Famous Paintings? - Level 1",
+        "description": "Is it Monalisa? Or Mona Lisa? Try your hand at matching the titles to these world-renowned paintings.",
+        "createdBy": "Kate Thomas",
+        "createdAt": "2019-07-01",
+        "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.8867924528301887,c_crop/ar_1.7777777777777777,c_fill/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561054032/lhpb8lwthayvuglwaw5j.png"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "What's the title of this painting?",
+            "options": [
+                {
+                    "text": "Monalisa",
+                    "score": 1
+                },
+                {
+                    "text": "MonaLisa"
+                },
+                {
+                    "text": "MonaLisa"
+                },
+                {
+                    "text": "MonaLizza"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561052222/j7s6uqxrfw7lx1zutdnf.png"
+        },
+        {
+            "id": 2,
+            "text": "What's the title of this painting?",
+            "options": [
+                {
+                    "text": "The Acropolis"
+                },
+                {
+                    "text": "School of Athens",
+                    "score": 1
+                },
+                {
+                    "text": "Las Menino"
+                },
+                {
+                    "text": "Leonardo's Conquest"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561052289/wqeuyp6ljnyj3frbdip1.jpg"
+        },
+        {
+            "id": 3,
+            "text": "What's the title of this painting?",
+            "options": [
+                {
+                    "text": "Rafael Dupont"
+                },
+                {
+                    "text": "All The King's Men"
+                },
+                {
+                    "text": "Night Watch",
+                    "score": 1
+                },
+                {
+                    "text": "In The Line Of Fire"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561052402/xuq7b8v2vncvvwvvgpqn.jpg"
+        },
+        {
+            "id": 4,
+            "text": "What's the title of this painting?",
+            "options": [
+                {
+                    "text": "The Great Beheading"
+                },
+                {
+                    "text": "End of Times"
+                },
+                {
+                    "text": "Beheading of Saint John the Baptist",
+                    "score": 1
+                },
+                {
+                    "text": "The Priest Is Dead"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561052488/yxtc5p5ftcnmyneoyaui.jpg"
+        },
+        {
+            "id": 5,
+            "text": "What's the title of this painting?",
+            "options": [
+                {
+                    "text": "Girl With A Smile"
+                },
+                {
+                    "text": "Girl In The Mirror"
+                },
+                {
+                    "text": "Girl With A Pearl Earring",
+                    "score": 1
+                },
+                {
+                    "text": "Girl With A Thought"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561052602/kuvr3sewgpz4rzdcgbog.png"
+        },
+        {
+            "id": 6,
+            "text": "What's the title of this painting?",
+            "options": [
+                {
+                    "text": "Introfusion"
+                },
+                {
+                    "text": "Guernica",
+                    "score": 1
+                },
+                {
+                    "text": "Solituda"
+                },
+                {
+                    "text": "Death Row"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561052993/ohvvat9egc3u9n3oxjkt.jpg"
+        },
+        {
+            "id": 7,
+            "text": "What's the title of this painting?",
+            "options": [
+                {
+                    "text": "The Final Dinner"
+                },
+                {
+                    "text": "The Last Supper",
+                    "score": 1
+                },
+                {
+                    "text": "The Last Bite"
+                },
+                {
+                    "text": "The Last Meal"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561053126/yeo2e3zzvpdbhvwyo88u.jpg"
+        },
+        {
+            "id": 8,
+            "text": "What's the title of this painting?",
+            "options": [
+                {
+                    "text": "Adam and God"
+                },
+                {
+                    "text": "The Spark of Creation"
+                },
+                {
+                    "text": "Michelangelo and Son"
+                },
+                {
+                    "text": "The Creation of Adam",
+                    "score": 1
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561053186/hqbcysm91zolnby6zcta.jpg"
+        },
+        {
+            "id": 9,
+            "text": "What's the title of this painting?",
+            "options": [
+                {
+                    "text": "The Fall Of Icarus"
+                },
+                {
+                    "text": "Icarus and Women With Cart"
+                },
+                {
+                    "text": "Landscape With The Fall Of Icarus",
+                    "score": 1
+                },
+                {
+                    "text": "Onlookers To Icarus"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561053366/lexbuz36cy5c64neatxf.jpg"
+        },
+        {
+            "id": 10,
+            "text": "What's the title of this painting?",
+            "options": [
+                {
+                    "text": "Stars At Night"
+                },
+                {
+                    "text": "Starry Night",
+                    "score": 1
+                },
+                {
+                    "text": "The Village Under Starry Night"
+                },
+                {
+                    "text": "Starry Starry Night"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1561053570/swamh5ljljdi3yitv46u.jpg"
+        }
+    ],
+    "results": [
+        {
+            "minScore": 1,
+            "maxScore": 4,
+            "title": "Low score. You don't know much about art do you...",
+            "description": "",
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/vc_h265,ac_none,q_75/v1561053709/bgirbejcqya4vdpnocim.mp4"
+        },
+        {
+            "minScore": 4,
+            "maxScore": 7,
+            "title": "Average score. You tried your best.",
+            "description": "",
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/vc_auto,ac_none,q_80/v1561053745/oaywp4cjbufewjmdatcw.mp4"
+        },
+        {
+            "minScore": 8,
+            "maxScore": 10,
+            "title": "High score! You're quite the art geek!",
+            "description": "",
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/vc_h265,ac_none,q_75/v1561053811/naqjkvm7picdodv0ud9j.mp4"
+        }
+    ]
+}

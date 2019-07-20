@@ -1,0 +1,195 @@
+{
+    "type": "CorrectIncorrect",
+    "header": {
+        "id": "factOrFake",
+        "title": "FACT or FAKE: Can You Tell History's Biggest Myths From Fact?",
+        "description": "Fact-checking seems to be a thing of the past - but not for you. See if you can sort some of society's most common historical myths from the fact.",
+        "createdBy": "Angel Estrada",
+        "createdAt": "2019-04-02",
+        "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.8867924528301887,c_crop/ar_1.7777777777777777,c_fill/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554227274/jboukyl50in2g84kibs8.png"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "Einstein flunked out of math as a child.",
+            "options": [
+                {
+                    "text": "Fact!"
+                },
+                {
+                    "text": "Fake...",
+                    "score": 1
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226636/f9dmvb4zilvqb3d2hfwq.jpg"
+        },
+        {
+            "id": 2,
+            "text": "The Iron Maiden was invented AFTER Medieval times.",
+            "options": [
+                {
+                    "text": "Fact!",
+                    "score": 1
+                },
+                {
+                    "text": "Fake..."
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226134/lhcs65yfpnrfdqopyh26.jpg"
+        },
+        {
+            "id": 3,
+            "text": "Napoleon Bonaparte was actually 5 foot, 7 inches tall.",
+            "options": [
+                {
+                    "text": "Fact!",
+                    "score": 1
+                },
+                {
+                    "text": "Fake..."
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554225742/en1laub2ujfuvwfg85c6.png"
+        },
+        {
+            "id": 4,
+            "text": "Walt Disney invented Mickey Mouse.",
+            "options": [
+                {
+                    "text": "Fact!"
+                },
+                {
+                    "text": "Fake...",
+                    "score": 1
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226049/wzbo2qjoz7pnyrlyls0h.jpg"
+        },
+        {
+            "id": 5,
+            "text": "ALL Gladiators were enslaved by owners.",
+            "options": [
+                {
+                    "text": "Fact!"
+                },
+                {
+                    "text": "Fake...",
+                    "score": 1
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226093/mbr9y0stz5fnhoayuf0q.png"
+        },
+        {
+            "id": 6,
+            "text": "Medieval citizens knew the earth was a sphere.",
+            "options": [
+                {
+                    "text": "Fact!",
+                    "score": 1
+                },
+                {
+                    "text": "Fake..."
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226441/xawg9u3iyrugwvjymum1.jpg"
+        },
+        {
+            "id": 7,
+            "text": "Gun fights & duels happened on a \"daily basis\" in the American Wild West.",
+            "options": [
+                {
+                    "text": "Fact!"
+                },
+                {
+                    "text": "Fake...",
+                    "score": 1
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226231/aibv00t1pltc4emkn9qa.jpg"
+        },
+        {
+            "id": 8,
+            "text": "No witches were burnt at the stake in the Salem Witch Trials.",
+            "options": [
+                {
+                    "text": "Fact!",
+                    "score": 1
+                },
+                {
+                    "text": "Fake..."
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226010/kokssoo39nvvwxua6zzv.jpg"
+        },
+        {
+            "id": 9,
+            "text": "Thomas Edison invented the light bulb.",
+            "options": [
+                {
+                    "text": "Fact!"
+                },
+                {
+                    "text": "Fake...",
+                    "score": 1
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226331/jftxrn2yb9wxz5jsvszs.jpg"
+        },
+        {
+            "id": 10,
+            "text": "Vikings never wore helmets with wings OR horns on them.",
+            "options": [
+                {
+                    "text": "Fact!",
+                    "score": 1
+                },
+                {
+                    "text": "Fake..."
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226798/lyr7okls8lbvnhveuez8.jpg"
+        },
+        {
+            "id": 11,
+            "text": "Vincent Van Gogh cut off his ENTIRE ear.",
+            "options": [
+                {
+                    "text": "Fact!"
+                },
+                {
+                    "text": "Fake...",
+                    "score": 1
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554225775/vlsmtnavvfupqyvlujfs.jpg"
+        },
+        {
+            "id": 12,
+            "text": "Sir Isaac Newton discovered gravity only when an apple fell on his head.",
+            "options": [
+                {
+                    "text": "Fact!"
+                },
+                {
+                    "text": "Fake...",
+                    "score": 1
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226546/zvixiti1qj0urilnfcdh.png"
+        },
+        {
+            "id": 13,
+            "text": "Catherine The Great died by sex with a horse.",
+            "options": [
+                {
+                    "text": "Fact!"
+                },
+                {
+                    "text": "Fake...",
+                    "score": 1
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_crop/q_auto:good,f_auto,fl_lossy,w_640,c_limit/v1554226886/jwmi1rwc8odjekt6dflk.jpg"
+        }
+    ]
+}
