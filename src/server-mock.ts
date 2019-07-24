@@ -5,7 +5,8 @@ let quizList: string[] = [];
 
 //#region PUBLIC API
 export const getQuizList = async () => {
-  if (quizList.length === 0 || quizesCache.entries.length < quizList.length) {
+  if (quizList.length === 0 || quizesCache.size < quizList.length) {
+    console.log('getData');
     await getData();
   }
   return Array.from(quizesCache.values(), quiz => quiz.header);
@@ -13,6 +14,7 @@ export const getQuizList = async () => {
 
 export const getQuiz = async (id: string) => {
   if (!quizesCache.has(id)) {
+    console.log('getData');
     await getData();
   }
   return quizesCache.get(id);
@@ -24,14 +26,14 @@ async function getData() {
     quizList = await getList();
   }
 
-  const fetchPromises = quizList.map(fileName =>
+  const promises = quizList.map(fileName =>
     fetch(`${process.env.PUBLIC_URL}/data/${fileName}.json`)
-      .then(data => data.json())
+      .then(data => data.json().catch(err => err))
       .then(quiz => quizesCache.set(quiz.header.id, new Quiz(quiz)))
       .catch(err => err),
   );
 
-  return Promise.all(fetchPromises);
+  await Promise.all(promises);
 }
 
 async function getList() {

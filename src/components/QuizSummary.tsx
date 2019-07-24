@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Redirect } from 'react-router';
 import Quiz from '../models/Quiz';
 import Result from '../models/Result';
 import { getMediaType, MediaType } from '../utils';
@@ -6,17 +7,19 @@ import { getMediaType, MediaType } from '../utils';
 interface IProps {
   quiz: Quiz;
   score: number;
-  onReturn: () => void;
 }
 
-const QuizSummary: React.FC<IProps> = ({
-  quiz,
-  score,
-  onReturn,
-}) => {
+const QuizSummary: React.FC<IProps> = ({ quiz, score }) => {
+  const [isFinished, setIsFinished] = useState(false);
   const result = quiz.findResult(score) || quiz.genericResult;
   const { title, description, imgSrc } = result;
   const maxScore = Math.max(...quiz.results.map(r => r.maxScore));
+  const onReturn = () => {
+    setIsFinished(true);
+  };
+  if (isFinished) {
+    return <Redirect push={true} to={`/`} />;
+  }
   return (
     <section className="quiz-summary">
       {imgSrc && getScoreElement(score, maxScore, 'quiz-summary-score')}

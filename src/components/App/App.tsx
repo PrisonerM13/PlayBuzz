@@ -1,24 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import Quiz from '../../containers/Quiz';
-import IQuizHeader from '../../models/IQuizHeader';
-import { getQuiz } from '../../server-mock';
 import QuizList from '../QuizList';
 import './App.scss';
 
-const App: React.FC<{quizList: IQuizHeader[]}> = ({ quizList }) => {
-  const [activeQuiz, setActiveQuiz] = useState();
-  const onQuizReturn = () => setActiveQuiz(null);
-  const onQuizSelect = async (quizId: string) => setActiveQuiz(await getQuiz(quizId));
+const App: React.FC = () => {
   return (
     <div className="App">
-      {!activeQuiz && <header>Pick a Quiz</header>}
-      {/* <section className="content"> */}
-        {activeQuiz ? (
-          <Quiz quiz={activeQuiz} onReturn={onQuizReturn} />
-        ) : (
-          <QuizList quizList={quizList} onSelect={onQuizSelect} />
-        )}
-      {/* </section> */}
+      <Switch>
+        <Route path="/:id" component={Quiz} />
+        <Route path="/" component={QuizList} />
+      </Switch>
     </div>
   );
 };

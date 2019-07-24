@@ -9,7 +9,7 @@ export default class Quiz implements IQuiz {
   public results: Result[];
   private _genericResult: Result | undefined;
 
-  constructor({ header, questions, results }: Quiz) {
+  constructor({ header, questions, results }: IQuiz) {
     this.header = header;
     this.questions = questions.map(q => new Question(q));
     this.results = results || [this.genericResult];
@@ -24,7 +24,7 @@ export default class Quiz implements IQuiz {
   }
 
   private getGenericResult(): Result {
-    const result = Result.Empty;
+    const result = new Result();
     let maxScore = 0;
     this.questions.forEach(q => {
       const scores = q.options.map(o => o.score);
