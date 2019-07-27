@@ -24,7 +24,6 @@ const Question: React.FC<IQuestion & { onAnswer: (index: number) => void }> = ({
           {options.map((option, index) => (
             <Option
               key={index}
-              isSingleInRow={isSingleInRow(options.length, index)}
               onClick={onAnswer.bind(null, index)}
               {...option}
             />
@@ -34,10 +33,5 @@ const Question: React.FC<IQuestion & { onAnswer: (index: number) => void }> = ({
     </div>
   );
 };
-
-// is option is placed alone in row
-function isSingleInRow(optionsCount: number, index: number) {
-  return index === optionsCount - 1 && optionsCount % 2 !== 0;
-}
 
 export default Question;
