@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import IQuizHeader from '../models/IQuizHeader';
 import { getQuizList } from '../server-mock';
-import Loader from './Loader';
+import Loading from './Loading';
 import QuizCard from './QuizCard';
 
 const QuizList: React.FC = () => {
@@ -13,7 +13,7 @@ const QuizList: React.FC = () => {
 
   if (!quizList) {
     load();
-    return <Loader />;
+    return <Loading />;
   }
 
   return (

@@ -1,3 +1,4 @@
+import IQuiz from './models/IQuiz';
 import Quiz from './models/Quiz';
 
 const quizesCache = new Map<string, Quiz>();
@@ -29,7 +30,7 @@ async function getData() {
   const promises = quizList.map(fileName =>
     fetch(`${process.env.PUBLIC_URL}/data/${fileName}.json`)
       .then(data => data.json().catch(err => err))
-      .then(quiz => quizesCache.set(quiz.header.id, new Quiz(quiz)))
+      .then((quiz: IQuiz) => quizesCache.set(quiz.header.id, new Quiz(quiz)))
       .catch(err => err),
   );
 

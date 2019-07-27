@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Question from '../components/Question';
+import withLoading from '../components/withLoading';
 import Quiz from '../models/Quiz';
 
 interface IProps {
@@ -12,6 +13,7 @@ const QuizRunner: React.FC<IProps> = ({ quiz, onFinish }) => {
   const [totalScore, setTotalScore] = useState(0);
   const { questions } = quiz;
   const activeQuestion = questions[activeQuestionIndex];
+  const QuestionWithLoading = withLoading(Question);
 
   const onAnswer = (index: number) => {
     setTotalScore(totalScore + activeQuestion.options[index].score);
@@ -21,7 +23,7 @@ const QuizRunner: React.FC<IProps> = ({ quiz, onFinish }) => {
     setActiveQuestionIndex(activeQuestionIndex + 1);
   };
 
-  return <Question {...activeQuestion} onAnswer={onAnswer} />;
+  return <QuestionWithLoading {...activeQuestion} onAnswer={onAnswer} />;
 };
 
 export default QuizRunner;

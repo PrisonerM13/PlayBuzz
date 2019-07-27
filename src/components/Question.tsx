@@ -1,36 +1,38 @@
-import React, { useState } from 'react';
-import IQuestion from '../models/Question';
-import Loader from './Loader';
+import React from 'react';
+import QuestionModel from '../models/Question';
 import Option from './Option';
+import { ILoading } from './withLoading';
 
-const Question: React.FC<IQuestion & { onAnswer: (index: number) => void }> = ({
+interface IProps {
+  onAnswer: (index: number) => void;
+}
+
+const Question: React.FC<QuestionModel & ILoading & IProps> = ({
   text,
   imgSrc,
   options,
   onAnswer,
+  isLoading,
+  onLoad,
 }) => {
-  const [isLoading, setIsLoading] = useState(true);
-  const render = () => setIsLoading(false);
   return (
-    <div>
-      {isLoading && <Loader />}
-      <section
-        className="question"
-        style={isLoading ? { display: 'none' } : {}}
-      >
-        <header>{text}</header>
-        {imgSrc ? <img src={imgSrc} alt={text} onLoad={render} /> : render()}
-        <section className="question-options">
-          {options.map((option, index) => (
-            <Option
-              key={index}
-              onClick={onAnswer.bind(null, index)}
-              {...option}
-            />
-          ))}
-        </section>
+    <section className="question" style={isLoading ? { display: 'none' } : {}}>
+      <header>{text}</header>
+      {imgSrc ? (
+        <img src={imgSrc} alt={text} onLoad={onLoad} />
+      ) : (
+        onLoad && onLoad()
+      )}
+      <section className="question-options">
+        {options.map((option, index) => (
+          <Option
+            key={index}
+            onClick={onAnswer.bind(null, index)}
+            {...option}
+          />
+        ))}
       </section>
-    </div>
+    </section>
   );
 };
 

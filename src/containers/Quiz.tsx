@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { RouteComponentProps } from 'react-router';
-import Loader from '../components/Loader';
+import Loading from '../components/Loading';
 import QuizIntro from '../components/QuizIntro';
 import QuizSummary from '../components/QuizSummary';
+import withLoading from '../components/withLoading';
 import QuizModel from '../models/Quiz';
 import { getQuiz } from '../server-mock';
 import QuizRunner from './QuizRunner';
@@ -32,16 +33,19 @@ const Quiz: React.FC<RouteComponentProps<{ id: string }>> = ({ match }) => {
 
   if (!quiz) {
     load(match.params.id);
-    return <Loader />;
+    return <Loading />;
   }
+
+  const QuizIntroWithLoading = withLoading(QuizIntro);
+  const QuizSummaryWithLoading = withLoading(QuizSummary);
 
   switch (activeView) {
     case QuizView.questions:
       return <QuizRunner quiz={quiz} onFinish={onFinish} />;
     case QuizView.summary:
-      return <QuizSummary quiz={quiz} score={totalScore} />;
+      return <QuizSummaryWithLoading quiz={quiz} score={totalScore} />;
     default:
-      return <QuizIntro {...quiz.header} onStart={onStart} />;
+      return <QuizIntroWithLoading {...quiz.header} onStart={onStart} />;
   }
 };
 
