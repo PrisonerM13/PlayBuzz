@@ -1,18 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 import IQuizHeader from '../models/IQuizHeader';
-import { getQuizList } from '../server-mock';
+import { IRootState } from '../reducers';
+import { setQuizList } from '../reducers/quizList';
+import { getQuizList as getQuizListData } from '../server-mock';
 import Loading from './Loading';
 import QuizCard from './QuizCard';
 
-const QuizList: React.FC = () => {
-  const [quizList, setQuizList] = useState<IQuizHeader[]>();
+interface IProps {
+  quizList: IQuizHeader[];
+  getQuizList: () => Promise<void>;
+}
 
-  async function load() {
-    setQuizList(await getQuizList());
-  }
+const QuizList: React.FC<IProps> = ({ quizList, getQuizList }) => {
+  // get data on mount
+  useEffect(() => {
+    getQuizList();
+  });
 
   if (!quizList) {
-    load();
     return <Loading />;
   }
 
@@ -28,4 +35,17 @@ const QuizList: React.FC = () => {
   );
 };
 
-export default QuizList;
+const mapStateToProps = (state: IRootState) => ({
+  quizList: state.quizList,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  getQuizList: async () => {
+    dispatch(setQuizList(await getQuizListData()));
+  },
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(QuizList);

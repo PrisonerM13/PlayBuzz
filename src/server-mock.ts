@@ -7,7 +7,6 @@ let quizList: string[] = [];
 //#region PUBLIC API
 export const getQuizList = async () => {
   if (quizList.length === 0 || quizesCache.size < quizList.length) {
-    console.log('getData');
     await getData();
   }
   return Array.from(quizesCache.values(), quiz => quiz.header);
@@ -15,7 +14,6 @@ export const getQuizList = async () => {
 
 export const getQuiz = async (id: string) => {
   if (!quizesCache.has(id)) {
-    console.log('getData');
     await getData();
   }
   return quizesCache.get(id);
