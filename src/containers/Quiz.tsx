@@ -6,24 +6,22 @@ import Loading from '../components/Loading';
 import QuizIntro from '../components/QuizIntro';
 import QuizSummary from '../components/QuizSummary';
 import withLoading from '../components/withLoading';
-import QuizModel from '../models/Quiz';
-import { IRootState } from '../reducers';
-import { setQuiz } from '../reducers/quiz';
+import { IActiveQuiz, IRootState } from '../reducers';
+import { setQuizAction } from '../reducers/activeQuiz';
 import { getQuiz as getQuizData } from '../server-mock';
 import QuizRunner from './QuizRunner';
 
-enum QuizView {
+export enum QuizView {
   intro,
   questions,
   summary,
 }
 
 interface IProps {
-  quiz: QuizModel;
   getQuiz: (id: string) => Promise<void>;
 }
 
-const Quiz: React.FC<IProps & RouteComponentProps<{ id: string }>> = ({
+const Quiz: React.FC<IProps & IActiveQuiz & RouteComponentProps<{ id: string }>> = ({
   quiz,
   getQuiz,
   match,
@@ -62,12 +60,12 @@ const Quiz: React.FC<IProps & RouteComponentProps<{ id: string }>> = ({
 };
 
 const mapStateToProps = (state: IRootState) => ({
-  quiz: state.quiz,
+  quiz: state.activeQuiz.quiz,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   getQuiz: async (id: string) => {
-    dispatch(setQuiz(await getQuizData(id)));
+    dispatch(setQuizAction(await getQuizData(id)));
   },
 });
 
