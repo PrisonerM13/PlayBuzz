@@ -6,10 +6,10 @@ import activeQuiz from './activeQuiz';
 import quizList from './quizList';
 
 export interface IActiveQuiz {
-  quiz: Quiz;
-  activeView: QuizView;
-  activeQuestion: number;
-  score: number;
+    quiz?: Quiz;
+    activeView: QuizView;
+    activeQuestionIndex: number;
+    score: number;
 }
 
 export interface IRootState {

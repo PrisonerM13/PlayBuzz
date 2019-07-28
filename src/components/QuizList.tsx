@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import IQuizHeader from '../models/IQuizHeader';
 import { IRootState } from '../reducers';
-import { setQuizList } from '../reducers/quizList';
+import { setQuizListAction } from '../reducers/quizList';
 import { getQuizList as getQuizListData } from '../server-mock';
 import Loading from './Loading';
 import QuizCard from './QuizCard';
@@ -41,7 +41,7 @@ const mapStateToProps = (state: IRootState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   getQuizList: async () => {
-    dispatch(setQuizList(await getQuizListData()));
+    dispatch(setQuizListAction(await getQuizListData()));
   },
 });
 

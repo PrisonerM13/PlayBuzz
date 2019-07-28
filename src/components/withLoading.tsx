@@ -6,7 +6,7 @@ export interface ILoading {
   onLoad?: () => void;
 }
 
-const withLoading = (Component: React.FC<ILoading & any>) => {
+const withLoading = (Component: React.FC<ILoading & any> & any) => {
   return ({ ...props }) => {
     const [isLoading, setIsLoading] = useState(true);
     const onLoad = () => setIsLoading(false);

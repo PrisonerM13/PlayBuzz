@@ -5,7 +5,7 @@ const ActionTypes = {
   SET_QUIZ_LIST: 'SET_QUIZ_LIST',
 };
 
-export const setQuizList = (quizList: IQuizHeader[]) => ({
+export const setQuizListAction = (quizList: IQuizHeader[]) => ({
   type: ActionTypes.SET_QUIZ_LIST,
   payload: quizList,
 });

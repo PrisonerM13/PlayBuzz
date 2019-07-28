@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { RouteComponentProps } from 'react-router';
 import { Dispatch } from 'redux';
@@ -12,35 +12,28 @@ import { getQuiz as getQuizData } from '../server-mock';
 import QuizRunner from './QuizRunner';
 
 export enum QuizView {
-  intro,
+  intro = 0,
   questions,
   summary,
 }
+
+export const initialQuizState: IActiveQuiz = {
+  activeView: QuizView.intro,
+  activeQuestionIndex: 0,
+  score: 0,
+};
 
 interface IProps {
   getQuiz: (id: string) => Promise<void>;
 }
 
-const Quiz: React.FC<IProps & IActiveQuiz & RouteComponentProps<{ id: string }>> = ({
-  quiz,
-  getQuiz,
-  match,
-}) => {
-  const [activeView, setActiveView] = useState(QuizView.intro);
-  const [totalScore, setTotalScore] = useState(0);
-
+const Quiz: React.FC<
+  IProps & IActiveQuiz & RouteComponentProps<{ id: string }>
+> = ({ quiz, activeView, getQuiz, match }) => {
   // get data on mount
   useEffect(() => {
     getQuiz(match.params.id);
   });
-
-  const onStart = () => {
-    setActiveView(QuizView.questions);
-  };
-  const onFinish = (score: number) => {
-    setTotalScore(score);
-    setActiveView(QuizView.summary);
-  };
 
   if (!quiz) {
     return <Loading />;
@@ -51,16 +44,16 @@ const Quiz: React.FC<IProps & IActiveQuiz & RouteComponentProps<{ id: string }>>
 
   switch (activeView) {
     case QuizView.questions:
-      return <QuizRunner quiz={quiz} onFinish={onFinish} />;
+      return <QuizRunner />;
     case QuizView.summary:
-      return <QuizSummaryWithLoading quiz={quiz} score={totalScore} />;
+      return <QuizSummaryWithLoading />;
     default:
-      return <QuizIntroWithLoading {...quiz.header} onStart={onStart} />;
+      return <QuizIntroWithLoading />;
   }
 };
 
 const mapStateToProps = (state: IRootState) => ({
-  quiz: state.activeQuiz.quiz,
+  ...state.activeQuiz,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({

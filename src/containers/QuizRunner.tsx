@@ -1,29 +1,56 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
 import Question from '../components/Question';
 import withLoading from '../components/withLoading';
 import Quiz from '../models/Quiz';
+import { IActiveQuiz, IRootState } from '../reducers';
+import {
+  addScoreAction,
+  advanceQuestionAction,
+  setViewAction,
+} from '../reducers/activeQuiz';
+import { QuizView } from './Quiz';
 
 interface IProps {
-  quiz: Quiz;
-  onFinish: (totalScore: number) => void;
+  addScore: (score: number) => void;
+  advanceQuestion: () => void;
+  setView: (view: QuizView) => void;
 }
 
-const QuizRunner: React.FC<IProps> = ({ quiz, onFinish }) => {
-  const [activeQuestionIndex, setActiveQuestionIndex] = useState(0);
-  const [totalScore, setTotalScore] = useState(0);
-  const { questions } = quiz;
+const QuizRunner: React.FC<IProps & IActiveQuiz> = ({
+  quiz,
+  activeQuestionIndex,
+  addScore,
+  advanceQuestion,
+  setView,
+}) => {
+  const { questions } = quiz as Quiz;
   const activeQuestion = questions[activeQuestionIndex];
-  const QuestionWithLoading = withLoading(Question);
 
   const onAnswer = (index: number) => {
-    setTotalScore(totalScore + activeQuestion.options[index].score);
+    addScore(activeQuestion.options[index].score);
     if (activeQuestionIndex === questions.length - 1) {
-      return onFinish(totalScore + activeQuestion.options[index].score);
+      setView(QuizView.summary);
     }
-    setActiveQuestionIndex(activeQuestionIndex + 1);
+    advanceQuestion();
   };
 
+  const QuestionWithLoading = withLoading(Question);
   return <QuestionWithLoading {...activeQuestion} onAnswer={onAnswer} />;
 };
 
-export default QuizRunner;
+const mapStateToProps = (state: IRootState) => ({
+  ...state.activeQuiz,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  setView: (view: QuizView) => dispatch(setViewAction(view)),
+  addScore: (score: number) => dispatch(addScoreAction(score)),
+  advanceQuestion: () => dispatch(advanceQuestionAction()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(QuizRunner);

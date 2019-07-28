@@ -1,21 +1,30 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { Dispatch } from 'redux';
+import { QuizView } from '../containers/Quiz';
 import IQuizHeader from '../models/IQuizHeader';
+import Quiz from '../models/Quiz';
+import { IRootState } from '../reducers';
+import { setViewAction } from '../reducers/activeQuiz';
 import { ILoading } from './withLoading';
 
 interface IProps {
-  onStart: () => void;
+  setActiveView: (view: QuizView) => void;
 }
 
-const QuizIntro: React.FC<IQuizHeader & ILoading & IProps> = ({
+const QuizIntro: React.FC<IQuizHeader & IProps & ILoading> = ({
   title,
   description,
   createdBy,
   createdAt,
   imgSrc,
-  onStart,
+  setActiveView,
   isLoading,
   onLoad,
 }) => {
+  const onStart = () => {
+    setActiveView(QuizView.questions);
+  };
   return (
     <section
       className="quiz-intro"
@@ -42,4 +51,15 @@ const QuizIntro: React.FC<IQuizHeader & ILoading & IProps> = ({
   );
 };
 
-export default QuizIntro;
+const mapStateToProps = (state: IRootState) => ({
+  ...(state.activeQuiz.quiz as Quiz).header,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  setActiveView: (view: QuizView) => dispatch(setViewAction(view)),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(QuizIntro);
