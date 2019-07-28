@@ -1,0 +1,158 @@
+{
+    "header": {
+        "id": "normalOrWeird",
+        "title": "Are You Normal Or Weird?",
+        "description": "It's the age old question... Are you normal or weird?",
+        "createdBy": "Carly Wallace",
+        "createdAt": "2017-12-22",
+        "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/44a27622-fd99-424d-96d9-68bb0d3e78e4_560_420.jpg"
+    },
+    "questions": [
+        {
+            "id": 1,
+            "text": "Choose a flavour of drink:",
+            "options": [
+                {
+                    "text": "Peach",
+                    "score": 1,
+                    "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.0,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/273b8568-72ff-4115-8a42-18eeca597d1d.jpg"
+                },
+                {
+                    "text": "Strewberry",
+                    "score": 2,
+                    "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.0,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/a2f95d6d-819f-44d5-a874-70060a3435fb.jpg"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/55bdd47c-c950-46e5-87f0-314041ba86be.jpg"
+        },
+        {
+            "id": 2,
+            "text": "Choose a marsupial:",
+            "options": [
+                {
+                    "text": "Wombat",
+                    "score": 1,
+                    "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.0,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/54b8ae94-c65d-4a5d-84cb-22b1728964ae.jpg"
+                },
+                {
+                    "text": "Sugar Gilder",
+                    "score": 2,
+                    "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.0,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/80cc7b49-e820-4e1a-b912-638740fcab7e.jpg"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/a745f710-7910-4045-8c99-fab0b8dc0b10.jpg"
+        },
+        {
+            "id": 3,
+            "text": "Choose an alternative baby name:",
+            "options": [
+                {
+                    "text": "Oakland",
+                    "score": 1
+                },
+                {
+                    "text": "Baltazar",
+                    "score": 2
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/a6270307-8de0-407d-8a37-b52f3e48c80c.jpg"
+        },
+        {
+            "id": 4,
+            "text": "Who would you be in Dungeon's and Dragons?",
+            "options": [
+                {
+                    "text": "The Dungeon Master",
+                    "score": 1
+                },
+                {
+                    "text": "Dungeons and what?...",
+                    "score": 2
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/3e3370f6-4807-469f-a7ee-65825580b5d2.jpg"
+        },
+        {
+            "id": 5,
+            "text": "Choose a traditional candy:",
+            "options": [
+                {
+                    "text": "Peanut Butter Toffee",
+                    "score": 1,
+                    "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.0,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/9dcb3326-ce0a-4f12-8cb0-3d7cc85d188c.jpg"
+                },
+                {
+                    "text": "Martzipan",
+                    "score": 2,
+                    "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.0,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/32a5238c-9f75-4bcc-86c5-e2a658ee56b9.jpg"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/cb184fce-ea65-4d6a-a54d-7bceb40ad148.jpg"
+        },
+        {
+            "id": 6,
+            "text": "Choose a cult film:",
+            "options": [
+                {
+                    "text": "The Room",
+                    "score": 1,
+                    "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.0,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/b3b29ba3-ae14-494c-9aa9-4a44bec5a835.jpg"
+                },
+                {
+                    "text": "Rocky Horror Picture Show",
+                    "score": 2,
+                    "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.0,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/96d1eef4-cde8-4a9a-993f-c3aad94568bc.jpg"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/a8e663dd-e514-4053-838e-6034a55adac5.jpg"
+        },
+        {
+            "id": 7,
+            "text": "What's your favourite holiday?",
+            "options": [
+                {
+                    "text": "Thanksgiving",
+                    "score": 1
+                },
+                {
+                    "text": "Halloween",
+                    "score": 2
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/a6d947aa-b7d8-4b5d-87c4-a22b6bd1a4ba.jpg"
+        },
+        {
+            "id": 8,
+            "text": "Choose a one hit wonder:",
+            "options": [
+                {
+                    "text": "\"Crazy\" by Gnarls Barkley",
+                    "score": 1,
+                    "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.0,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/f1aefdfa-1259-43e0-91b2-d79288a1ba35.jpg"
+                },
+                {
+                    "text": "\"I Believe in a Thing Called Love\" by The Darkness",
+                    "score": 2,
+                    "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.0,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/0554459a-950b-4a1d-8ac2-a9c0e1f34bb8.jpg"
+                }
+            ],
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_jpg,b_auto/q_auto:good,f_auto,fl_lossy,w_640,c_limit/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/aa8de53a-4c65-44bb-8757-d3b116cce34e.jpg"
+        }
+    ],
+    "results": [
+        {
+            "minScore": 8,
+            "maxScore": 12,
+            "title": "You are...Normal!",
+            "description": "Yes, you belong with the normies. You had a pretty normal upbringing....and had a normal high school life. You're happy going about your day doing normal things with normal people like going to the movies...watching tv, playing sports. You know...normal stuff.",
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_mp4,b_black/vc_h265,ac_none,q_75/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/6b6c0399-a478-4ed7-85f7-ceb58fc2a56a.mp4"
+        },
+        {
+            "minScore": 13,
+            "maxScore": 16,
+            "title": "You are...Weird!",
+            "description": "You are a bonified weirdo, it's true! You have an unconventional upbringing, and let's say high school weren't exactly the best years of your life. But since then you've come into your own as an amazing, wonderful, weirdo. You like to go against the grain of society, you're a cliff diver, a trailblazer, a true revolutionary. You also like mayonnaise on your fries...Weird!",
+            "imgSrc": "https://img.playbuzz.com/image/upload/ar_1.5,c_pad,f_mp4,b_black/vc_h265,ac_none,q_75/cdn/628bdcde-9ee6-4a4b-ba4f-6822e7204f81/17d924f9-2fe7-4e1c-80d9-92e0d19f1d91.mp4"
+        }
+    ]
+}
