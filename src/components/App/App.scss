@@ -42,7 +42,7 @@
     font-size: 1.5em;
     font-weight: bold;
   }
-  img,
+  >img,
   video {
     margin: 8px;
     padding: 8px;
@@ -58,7 +58,13 @@
     margin: 0;
   }
   flex-grow: 1;
-  max-width: 40vw;
+  max-width: 45%;
+  transition: background-color 1000ms linear;
+}
+
+.question-option__header__result-indicator {
+  height: 2em;
+  width: 2em;
 }
 
 .quiz-card,
@@ -77,6 +83,11 @@
   background-color: lightcyan;
 }
 
+.question-option-header {
+  display: flex;
+  justify-content: space-around;
+}
+
 .quiz-card {
   max-width: 450px;
 }
@@ -87,7 +98,7 @@
   color: blue;
 }
 
-.quiz-summary-score--graphic {
+.quiz-summary-score--no-media {
   display: flex;
   justify-content: center;
   align-items: center;

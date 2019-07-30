@@ -26,19 +26,33 @@ const QuizSummary: React.FC<IProps & IActiveQuiz & ILoading> = ({
   const onReturn = () => {
     setIsFinished(true);
   };
+
   if (isFinished) {
     reset();
     return <Redirect push={true} to={`/`} />;
   }
+
+  if (!imgSrc && onLoad) {
+    onLoad();
+  }
+
   return (
     <section
       className="quiz-summary"
       style={isLoading ? { display: 'none' } : {}}
     >
-      {imgSrc && getScoreElement(score, maxScore, 'quiz-summary-score')}
-      {title && <header>{title}</header>}
-      {getMediaElement(result, onLoad) ||
-        getScoreElement(score, maxScore, 'quiz-summary-score--graphic')}
+      {imgSrc &&
+        quiz.isTrueOrFalse &&
+        getScoreElement(score, maxScore, 'quiz-summary-score')}
+      {(title && <header>{title}</header>) ||
+        (quiz.isTrueOrFalse && <header>{getTitle(score, maxScore)}</header>)}
+      {(imgSrc && getMediaElement(result, onLoad)) ||
+        getScoreElement(
+          score,
+          maxScore,
+          'quiz-summary-score--no-media',
+          quiz.isTrueOrFalse,
+        )}
       {description && <p>{description}</p>}
       <button onClick={onReturn}>Return</button>
     </section>
@@ -59,17 +73,27 @@ export default connect(
 )(QuizSummary);
 
 //#region Helper functions
+function getTitle(score: number, maxScore: number) {
+  const relatedScore = score / maxScore;
+  if (relatedScore <= 0.25) {
+    return 'Not so good...';
+  }
+  if (relatedScore > 0.25 && relatedScore <= 0.5) {
+    return 'Could be better...';
+  }
+  if (relatedScore > 0.5 && relatedScore <= 0.75) {
+    return 'Pretty good!';
+  }
+  if (relatedScore > 0.75) {
+    return 'Well done!!!';
+  }
+}
+
 function getMediaElement(
   result: Result,
   onLoad?: () => void,
-): JSX.Element | undefined {
+): JSX.Element | void {
   const { title, imgSrc } = result;
-  if (!imgSrc) {
-    if (onLoad) {
-      onLoad();
-    }
-    return;
-  }
   return getMediaType(imgSrc) === MediaType.video ? (
     <video autoPlay={true} loop={true} onCanPlay={onLoad}>
       <source src={imgSrc} />
@@ -79,12 +103,19 @@ function getMediaElement(
   );
 }
 
-function getScoreElement(score: number, maxScore: number, className: string) {
+function getScoreElement(
+  score: number,
+  maxScore: number,
+  className: string,
+  isTrueOrFalse?: boolean,
+) {
   return (
     <div className={className}>
-      <span>
-        {score}/{maxScore}
-      </span>
+      {isTrueOrFalse && (
+        <span>
+          {score}/{maxScore}
+        </span>
+      )}
     </div>
   );
 }

@@ -24,6 +24,11 @@ const QuizIntro: React.FC<IQuizHeader & IProps & ILoading> = ({
   const onStart = () => {
     setActiveView(QuizView.questions);
   };
+
+  if (!imgSrc && onLoad) {
+    onLoad();
+  }
+
   return (
     <section
       className="quiz-intro"
@@ -39,11 +44,7 @@ const QuizIntro: React.FC<IQuizHeader & IProps & ILoading> = ({
           year: 'numeric',
         })}
       </div>
-      {imgSrc ? (
-        <img src={imgSrc} alt={title} onLoad={onLoad} />
-      ) : (
-        onLoad && onLoad()
-      )}
+      {imgSrc && <img src={imgSrc} alt={title} onLoad={onLoad} />}
       <p>{description}</p>
       <button onClick={onStart}>Start</button>
     </section>

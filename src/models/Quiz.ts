@@ -11,12 +11,14 @@ export default class Quiz implements IQuiz {
   public header: IQuizHeader;
   public questions: Question[];
   public results: Result[];
+  public isTrueOrFalse: boolean;
   private _genericResult: Result | undefined;
 
   constructor({ header, questions, results }: IQuiz) {
     this.header = header;
     this.questions = questions.map(q => new Question(q));
     this.results = results || [this.genericResult];
+    this.isTrueOrFalse = this.questions.every(question => question.isTrueOrFalse);
   }
 
   public get genericResult(): Result {
