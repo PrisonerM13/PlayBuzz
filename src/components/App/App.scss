@@ -4,27 +4,26 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
 
+.quiz-list {
   header {
     font-size: 3em;
     font-weight: bold;
     margin: 20px;
   }
+  .list {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
 
-.quiz-list,
 .question-options {
   display: flex;
   flex-wrap: wrap;
-}
-
-.quiz-list {
-  justify-content: center;
-}
-
-.question-options {
-  width: 100%;
   justify-content: space-around;
+  width: 100%;
 }
 
 .quiz-card,
@@ -38,7 +37,7 @@
   align-items: center;
   margin: 8px;
   padding: 8px;
-    header {
+  header {
     margin-bottom: 8px;
     font-size: 1.5em;
     font-weight: bold;
@@ -110,6 +109,37 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress-bar__item {
+  height: 10px;
+  width: 10px;
+  margin: 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+}
+
+.progress-bar__item--active {
+  height: 15px;
+  width: 15px;
+  background-color: blue;
+}
+
+.progress-indicator {
+  font-size: 2em;
+  font-weight: bold;
+  margin: 10px;
+  color: blue;
 }

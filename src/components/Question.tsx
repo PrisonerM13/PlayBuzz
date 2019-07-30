@@ -7,10 +7,10 @@ interface IProps {
   onAnswer: (index: number) => void;
 }
 
-const Question: React.FC<QuestionModel & ILoading & IProps> = ({
+const Question: React.FC<QuestionModel & IProps & ILoading> = ({
   text,
-  imgSrc,
   options,
+  imgSrc,
   onAnswer,
   isLoading,
   onLoad,

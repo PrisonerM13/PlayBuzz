@@ -6,9 +6,8 @@ const Option: React.FC<OptionModel & { onClick: () => void }> = ({
   imgSrc,
   onClick,
 }) => {
-  const onOptionClick = () => onClick();
   return (
-    <section className="question-option" onClick={onOptionClick}>
+    <section className="question-option" onClick={onClick}>
       <header>{text}</header>
       {imgSrc && <img src={imgSrc} alt={text} />}
     </section>

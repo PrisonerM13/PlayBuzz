@@ -15,7 +15,7 @@ const withLoading = (Component: React.FC<ILoading & any> & any) => {
     const [isLoading, setIsLoading] = useState(true);
     const onLoad = () => setIsLoading(false);
     return (
-      <section>
+      <section className="with-loading">
         {isLoading && <Loading />}
         <Component isLoading={isLoading} onLoad={onLoad} {...props} />
       </section>

@@ -1,6 +1,13 @@
-import { initialQuizState, QuizView } from '../containers/Quiz';
+import { QuizView } from "../containers/QuizView";
 import IAction from '../models/IAction';
 import Quiz from '../models/Quiz';
+
+export interface IActiveQuiz {
+  quiz: Quiz;
+  activeView: QuizView;
+  activeQuestionIndex: number;
+  score: number;
+}
 
 const ActionTypes = {
   SET_QUIZ: 'SET_QUIZ',
@@ -45,11 +52,12 @@ export const resetAction = (): IAction => ({
   type: ActionTypes.RESET,
 });
 
-// const initialState: IActiveQuiz = {
-//   activeView: QuizView.intro,
-//   activeQuestionIndex: 0,
-//   score: 0,
-// };
+const initialQuizState: IActiveQuiz = {
+  quiz: Quiz.Empty,
+  activeView: QuizView.intro,
+  activeQuestionIndex: 0,
+  score: 0,
+};
 
 const activeQuizReducer = (state = initialQuizState, action: IAction) => {
   switch (action.type) {

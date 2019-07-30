@@ -4,6 +4,10 @@ import Question from './Question';
 import Result from './Result';
 
 export default class Quiz implements IQuiz {
+  public static Empty = new Quiz({
+    header: {} as IQuizHeader,
+    questions: [] as Question[],
+  });
   public header: IQuizHeader;
   public questions: Question[];
   public results: Result[];

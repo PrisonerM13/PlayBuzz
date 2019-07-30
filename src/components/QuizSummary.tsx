@@ -2,10 +2,9 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { Dispatch } from 'redux';
-import Quiz from '../models/Quiz';
 import Result from '../models/Result';
-import { IActiveQuiz, IRootState } from '../reducers';
-import { resetAction } from '../reducers/activeQuiz';
+import { IRootState } from '../reducers';
+import { IActiveQuiz, resetAction } from '../reducers/activeQuiz';
 import { getMediaType, MediaType } from '../utils';
 import { ILoading } from './withLoading';
 
@@ -20,7 +19,6 @@ const QuizSummary: React.FC<IProps & IActiveQuiz & ILoading> = ({
   onLoad,
   reset,
 }) => {
-  quiz = quiz as Quiz;
   const [isFinished, setIsFinished] = useState(false);
   const result = quiz.findResult(score) || quiz.genericResult;
   const { title, description, imgSrc } = result;
@@ -46,6 +44,19 @@ const QuizSummary: React.FC<IProps & IActiveQuiz & ILoading> = ({
     </section>
   );
 };
+
+const mapStateToProps = (state: IRootState) => ({
+  ...state.activeQuiz,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch) => ({
+  reset: () => dispatch(resetAction()),
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(QuizSummary);
 
 //#region Helper functions
 function getMediaElement(
@@ -78,17 +89,3 @@ function getScoreElement(score: number, maxScore: number, className: string) {
   );
 }
 //#endregion Helper functions
-
-const mapStateToProps = (state: IRootState) => ({
-  quiz: state.activeQuiz.quiz,
-  score: state.activeQuiz.score,
-});
-
-const mapDispatchToProps = (dispatch: Dispatch) => ({
-  reset: () => dispatch(resetAction()),
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(QuizSummary);

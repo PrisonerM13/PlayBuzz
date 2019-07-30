@@ -1,16 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
+import ProgressBar from '../components/ProgressBar';
+import ProgressIndicator from '../components/ProgressIndicator';
 import Question from '../components/Question';
 import withLoading from '../components/withLoading';
-import Quiz from '../models/Quiz';
-import { IActiveQuiz, IRootState } from '../reducers';
+import { IRootState } from '../reducers';
 import {
   addScoreAction,
   advanceQuestionAction,
+  IActiveQuiz,
   setViewAction,
 } from '../reducers/activeQuiz';
-import { QuizView } from './Quiz';
+import { QuizView } from './QuizView';
 
 interface IProps {
   addScore: (score: number) => void;
@@ -25,7 +27,7 @@ const QuizRunner: React.FC<IProps & IActiveQuiz> = ({
   advanceQuestion,
   setView,
 }) => {
-  const { questions } = quiz as Quiz;
+  const { questions } = quiz;
   const activeQuestion = questions[activeQuestionIndex];
 
   const onAnswer = (index: number) => {
@@ -37,7 +39,13 @@ const QuizRunner: React.FC<IProps & IActiveQuiz> = ({
   };
 
   const QuestionWithLoading = withLoading(Question);
-  return <QuestionWithLoading {...activeQuestion} onAnswer={onAnswer} />;
+  return (
+    <section className="quiz-runner">
+      <ProgressIndicator />
+      <ProgressBar />
+      <QuestionWithLoading {...activeQuestion} onAnswer={onAnswer} />
+    </section>
+  );
 };
 
 const mapStateToProps = (state: IRootState) => ({

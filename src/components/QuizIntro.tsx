@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { QuizView } from '../containers/Quiz';
+import { QuizView } from '../containers/QuizView';
 import IQuizHeader from '../models/IQuizHeader';
-import Quiz from '../models/Quiz';
 import { IRootState } from '../reducers';
 import { setViewAction } from '../reducers/activeQuiz';
 import { ILoading } from './withLoading';
@@ -52,7 +51,7 @@ const QuizIntro: React.FC<IQuizHeader & IProps & ILoading> = ({
 };
 
 const mapStateToProps = (state: IRootState) => ({
-  ...(state.activeQuiz.quiz as Quiz).header,
+  ...state.activeQuiz.quiz.header,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
