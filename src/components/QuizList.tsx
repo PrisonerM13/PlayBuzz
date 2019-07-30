@@ -17,16 +17,16 @@ const QuizList: React.FC<IProps> = ({ quizList, getQuizList }) => {
   // get data on mount
   useEffect(() => {
     getQuizList();
-  });
+  }, [getQuizList]);
 
   if (!quizList) {
     return <Loading />;
   }
 
   return (
-    <section>
+    <section className="quiz-list">
       <header>Pick a Quiz</header>
-      <div className="quiz-list">
+      <div className="quiz-list list">
         {quizList.map(quiz => (
           <QuizCard key={quiz.id} {...quiz} />
         ))}

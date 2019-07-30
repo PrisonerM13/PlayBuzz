@@ -1,16 +1,7 @@
 import { combineReducers } from 'redux';
-import { QuizView } from '../containers/Quiz';
 import IQuizHeader from '../models/IQuizHeader';
-import Quiz from '../models/Quiz';
-import activeQuiz from './activeQuiz';
+import activeQuiz, { IActiveQuiz } from './activeQuiz';
 import quizList from './quizList';
-
-export interface IActiveQuiz {
-    quiz?: Quiz;
-    activeView: QuizView;
-    activeQuestionIndex: number;
-    score: number;
-}
 
 export interface IRootState {
   quizList: IQuizHeader[];

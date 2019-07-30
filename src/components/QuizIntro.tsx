@@ -1,9 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
-import { QuizView } from '../containers/Quiz';
+import { QuizView } from '../containers/QuizView';
 import IQuizHeader from '../models/IQuizHeader';
-import Quiz from '../models/Quiz';
 import { IRootState } from '../reducers';
 import { setViewAction } from '../reducers/activeQuiz';
 import { ILoading } from './withLoading';
@@ -25,6 +24,11 @@ const QuizIntro: React.FC<IQuizHeader & IProps & ILoading> = ({
   const onStart = () => {
     setActiveView(QuizView.questions);
   };
+
+  if (!imgSrc && onLoad) {
+    onLoad();
+  }
+
   return (
     <section
       className="quiz-intro"
@@ -40,11 +44,7 @@ const QuizIntro: React.FC<IQuizHeader & IProps & ILoading> = ({
           year: 'numeric',
         })}
       </div>
-      {imgSrc ? (
-        <img src={imgSrc} alt={title} onLoad={onLoad} />
-      ) : (
-        onLoad && onLoad()
-      )}
+      {imgSrc && <img src={imgSrc} alt={title} onLoad={onLoad} />}
       <p>{description}</p>
       <button onClick={onStart}>Start</button>
     </section>
@@ -52,7 +52,7 @@ const QuizIntro: React.FC<IQuizHeader & IProps & ILoading> = ({
 };
 
 const mapStateToProps = (state: IRootState) => ({
-  ...(state.activeQuiz.quiz as Quiz).header,
+  ...state.activeQuiz.quiz.header,
 });
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
