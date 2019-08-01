@@ -42,7 +42,7 @@
     font-size: 1.5em;
     font-weight: bold;
   }
-  >img,
+  > img,
   video {
     margin: 8px;
     padding: 8px;
@@ -98,16 +98,21 @@
   color: blue;
 }
 
-.quiz-summary-score--no-media {
+.quiz-summary-score--graphic {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 10vw;
+  font-size: 7vw;
   background-color: blue;
   color: white;
   width: 70vw;
   height: 70vh;
   margin: 10px;
+}
+
+.growing-element {
+  transition: transform 1500ms linear;
+  transform: scale(2);
 }
 
 .loading-indicator {

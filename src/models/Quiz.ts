@@ -6,7 +6,7 @@ import Result from './Result';
 export default class Quiz implements IQuiz {
   public static Empty = new Quiz({
     header: {} as IQuizHeader,
-    questions: [] as Question[],
+    questions: [],
   });
   public header: IQuizHeader;
   public questions: Question[];

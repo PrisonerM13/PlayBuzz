@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
 import { Dispatch } from 'redux';
@@ -20,9 +20,23 @@ const QuizSummary: React.FC<IProps & IActiveQuiz & ILoading> = ({
   reset,
 }) => {
   const [isFinished, setIsFinished] = useState(false);
-  const result = quiz.findResult(score) || quiz.genericResult;
-  const { title, description, imgSrc } = result;
-  const maxScore = Math.max(...quiz.results.map(r => r.maxScore));
+  const [isRendered, setIsRendered] = useState(false);
+  // Use isMounted to prevent "Warning: Can't perform a React state update on an unmounted component".
+  const isMounted = useRef(false);
+
+  useEffect(() => {
+    isMounted.current = true;
+    // Use setTimeout to change rendering AFTER first render (used for animation here)
+    setTimeout(() => {
+      if (isMounted.current && !isRendered) {
+        setIsRendered(true);
+      }
+    }, 0);
+    return () => {
+      isMounted.current = false;
+    };
+  });
+
   const onReturn = () => {
     setIsFinished(true);
   };
@@ -32,9 +46,22 @@ const QuizSummary: React.FC<IProps & IActiveQuiz & ILoading> = ({
     return <Redirect push={true} to={`/`} />;
   }
 
+  const result = quiz.findResult(score) || quiz.genericResult;
+  const { title, description, imgSrc } = result;
+  const maxScore = Math.max(...quiz.results.map(r => r.maxScore));
+
+  // If no image there's nothing to wait for
   if (!imgSrc && onLoad) {
     onLoad();
   }
+
+  const getScoreElementBound = getScoreElement.bind(
+    null,
+    score,
+    maxScore,
+    quiz.isTrueOrFalse,
+    isRendered,
+  );
 
   return (
     <section
@@ -43,16 +70,11 @@ const QuizSummary: React.FC<IProps & IActiveQuiz & ILoading> = ({
     >
       {imgSrc &&
         quiz.isTrueOrFalse &&
-        getScoreElement(score, maxScore, 'quiz-summary-score')}
+        getScoreElementBound('quiz-summary-score')}
       {(title && <header>{title}</header>) ||
         (quiz.isTrueOrFalse && <header>{getTitle(score, maxScore)}</header>)}
       {(imgSrc && getMediaElement(result, onLoad)) ||
-        getScoreElement(
-          score,
-          maxScore,
-          'quiz-summary-score--no-media',
-          quiz.isTrueOrFalse,
-        )}
+        getScoreElementBound('quiz-summary-score--graphic')}
       {description && <p>{description}</p>}
       <button onClick={onReturn}>Return</button>
     </section>
@@ -106,16 +128,15 @@ function getMediaElement(
 function getScoreElement(
   score: number,
   maxScore: number,
+  isTrueOrFalse: boolean,
+  isRendered: boolean,
   className: string,
-  isTrueOrFalse?: boolean,
 ) {
   return (
     <div className={className}>
-      {isTrueOrFalse && (
-        <span>
-          {score}/{maxScore}
-        </span>
-      )}
+      <span className={isRendered ? 'growing-element' : ''}>
+        {isTrueOrFalse ? `${score}/${maxScore}` : 'The End'}
+      </span>
     </div>
   );
 }

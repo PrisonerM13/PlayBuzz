@@ -1,8 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { IRootState } from '../reducers';
 import ProgressBarItem from './ProgressBarItem';
 
+// value is zero based
 const ProgressBar: React.FC<{ length: number; value: number }> = ({
   length,
   value,
@@ -16,9 +15,4 @@ const ProgressBar: React.FC<{ length: number; value: number }> = ({
   );
 };
 
-const mapStateToProps = (state: IRootState) => ({
-  length: state.activeQuiz.quiz.questions.length,
-  value: state.activeQuiz.activeQuestionIndex,
-});
-
-export default connect(mapStateToProps)(ProgressBar);
+export default ProgressBar;
