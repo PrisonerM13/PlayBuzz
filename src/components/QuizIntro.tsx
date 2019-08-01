@@ -25,6 +25,7 @@ const QuizIntro: React.FC<IQuizHeader & IProps & ILoading> = ({
     setActiveView(QuizView.questions);
   };
 
+  // If no image there's nothing to wait for
   if (!imgSrc && onLoad) {
     onLoad();
   }

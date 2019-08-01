@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
 import ProgressBar from '../components/ProgressBar';
-import ProgressIndicator from '../components/ProgressIndicator';
+import ProgressTitle from '../components/ProgressTitle';
 import Question from '../components/Question';
 import withLoading from '../components/withLoading';
 import { IRootState } from '../reducers';
@@ -41,8 +41,11 @@ const QuizRunner: React.FC<IProps & IActiveQuiz> = ({
   const QuestionWithLoading = withLoading(Question);
   return (
     <section className="quiz-runner">
-      <ProgressIndicator />
-      <ProgressBar />
+      <ProgressTitle
+        maxValue={questions.length}
+        currentValue={activeQuestionIndex + 1}
+      />
+      <ProgressBar length={questions.length} value={activeQuestionIndex} />
       <QuestionWithLoading {...activeQuestion} onAnswer={onAnswer} />
     </section>
   );

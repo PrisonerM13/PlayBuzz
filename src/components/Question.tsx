@@ -3,7 +3,7 @@ import QuestionModel from '../models/Question';
 import Option from './Option';
 import { ILoading } from './withLoading';
 
-const MOVE_TO_NEXT_QUESTION_DELAY_TIME = 1000;
+const DELAY_TIME_BEFORE_MOVE_NEXT = 1000;
 
 interface IProps {
   onAnswer: (index: number) => void;
@@ -25,12 +25,13 @@ const Question: React.FC<QuestionModel & IProps & ILoading> = ({
     if (isTrueOrFalse) {
       setTimeout(() => {
         onAnswer(index);
-      }, MOVE_TO_NEXT_QUESTION_DELAY_TIME);
+      }, DELAY_TIME_BEFORE_MOVE_NEXT);
     } else {
       onAnswer(index);
     }
   };
 
+  // If no image there's nothing to wait for
   if (!imgSrc && onLoad) {
     onLoad();
   }
